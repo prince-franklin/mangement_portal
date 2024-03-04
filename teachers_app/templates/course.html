@@ -18,6 +18,9 @@
             <li class="fw-bold text-uppercase text-primary-emphasis"> teacher: {{course.teacher}}</li>
 
             </ul>
+            <a href="{% url 'del_course' course.id%}">
+                <button type="button" class="btn btn-danger">Delete course</button>
+                </a>
 
     {% endblock content %}
 

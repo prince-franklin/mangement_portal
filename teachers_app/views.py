@@ -14,6 +14,7 @@ def dashboard(request):
     
     return render(request, 'dashboard.html', {'student': student, 'courses':courses})
 
+
 def View_student_profile(request, task_id):
     profile=student_profile.objects.get(pk=task_id)
 
@@ -44,3 +45,14 @@ def add_course(request):
 def view_course_details(request, task_id):
     course=courses_detail.objects.get(pk=task_id)
     return render(request, 'course.html',{'course':course})
+
+
+def del_student(request, task_id):
+    profile=student_profile.objects.get(pk=task_id)
+    profile.delete()
+    return redirect('dashboard')
+
+def del_course(request, task_id):
+    course=courses_detail.objects.get(pk=task_id)
+    course.delete()
+    return redirect('dashboard')

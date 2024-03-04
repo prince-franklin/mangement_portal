@@ -19,6 +19,9 @@
             <li class="fw-bold text-uppercase text-primary-emphasis"> phone : {{profile.phone}}</li>
 
             </ul>
+            <a href="{% url 'del_student' profile.id%}">
+            <button type="button" class="btn btn-danger">Delete Profile</button>
+            </a>
 
     {% endblock content %}
 </div>
