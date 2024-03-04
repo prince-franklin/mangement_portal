@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+ <title> welcome {{ profile.}} profile</title>
+{% endblock title %}
+
+
+    {% block content %}
+
+    
+            <h2 class="fw-bold text-uppercase">COURSE DETAILS</h2>
+            <ul>
+
+            <li class="fw-bold text-uppercase text-primary-emphasis"> Title : {{course.title}}</li>
+            <li class="fw-bold text-uppercase text-primary-emphasis"> course code: {{course.code}}</li>
+            <li class="fw-bold text-uppercase text-primary-emphasis"> Description:{{course.description}}</li>
+            <li class="fw-bold text-uppercase text-primary-emphasis"> Department: {{course.deparment}}</li>
+            <li class="fw-bold text-uppercase text-primary-emphasis"> teacher: {{course.teacher}}</li>
+
+            </ul>
+
+    {% endblock content %}
+

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block tithe %}
+    <title> Welcome to your Dashboard</title>
+{% endblock tithe %}
+
+{% block content %}
+</br>
+<div class= "container">
+    <h2 class="text-primary">Table of Students</h2>
+        <table class="table table-bordered">
+            <thead class="table-light">
+            <tr>
+                <th scope="col">Students</th>
+                <th scope="col">Details</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for obj in student %}
+                    <tr>
+                        <td scope="row">{{obj.name}}</th>
+                        <td><a href="{% url 'view_profile' obj.id %}">view Profile</a></td>
+                    </tr>
+                {% endfor %}
+                        
+                   
+                
+
+            </tbody>
+        </table>
+        <h2 class="text-primary">Table of courses</h2>
+        <table class="table table-bordered">
+            <thead class="table-light">
+            <tr>
+                <th scope="col">Courses</th>
+                <th scope="col">Details</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for obj in courses %}
+                    <tr>
+                        <td scope="row">{{obj.title}}</th>
+                        <td><a href="{% url 'view_course' obj.id %}">View Details</a></td>
+                    </tr>
+                {% endfor %}
+                        
+                   
+                
+
+            </tbody>
+        </table>
+</div>
+{% endblock content %}
