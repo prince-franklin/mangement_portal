@@ -1,8 +1,43 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
  <title> welcome to Homepage </title>
 {% endblock title %}
 
 {% block content %}
+    <div class= "container">
+        <div class="row">
+            <div class="col-lg-6">
+                    <img src="{% static '/images/group.jpg' %}" alt="image 1" class ="rounded-lg shadow-lg" width="600" height="250">
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'images/single.jpg' %}" alt="image 2" class ="rounded-lg shadow-lg" width="700" height="250">
+            </div>
+
+        
+
+        </div>
+        <div class "row" col-md-10 offset-md-1>
+            <center><p class= "h1 text-secondary">Top Student Information Management System</p></center>
+            <center><p class= "h2 text-primary">For Higher Efficiency& Transparency</p></center>
+            <center><p class= "h3">Trends and Predictions For the Next Decade</p></center>
+        </div>
+
+        <div class="row">
+            <!--<div class="col-lg-4">
+                    <img src="{% static '/images/man and child.jpg' %}" alt="image 1" class ="rounded-lg shadow-lg" width="360" height="250">
+            </div>-->
+            <div class="">
+                <center><img src="{% static 'images/apple.jpg' %}" alt="image 2" class ="rounded-lg shadow-lg" width="450" height="200"></center>
+            </div>
+
+            <!--<div class="col-lg-4">
+                <img src="{% static 'images/two and laptop.jpg' %}" alt="image 2" class ="rounded-lg shadow-lg" width="360" height="250">
+            </div>-->
+        </div>
+
+        
+
+    </div>
 {% endblock content %}
