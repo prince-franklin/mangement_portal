@@ -56,3 +56,27 @@ def del_course(request, task_id):
     course=courses_detail.objects.get(pk=task_id)
     course.delete()
     return redirect('dashboard')
+
+def edit_course(request, task_id):
+    if request.method=="POST":
+        course=courses_detail.objects.get(pk=task_id)
+        form=courseForm(request.POST or None, instance= course)
+        if form.is_valid():
+            form.save()
+        messages.success(request, ('Course Updated Successfully'))
+        return redirect('dashboard')
+    else:
+        course_up=courses_detail.objects.get(pk=task_id)
+        return render(request,'edit_course.html',{'course_up':course_up} )
+    
+def edit_profile(request, task_id):
+    if request.method=="POST":
+        profile=student_profile.objects.get(pk=task_id)
+        form=studentForm(request.POST or None, instance= profile)
+        if form.is_valid():
+            form.save()
+        messages.success(request, ('Profile Updated Successfully'))
+        return redirect('dashboard')
+    else:
+        profile_up=student_profile.objects.get(pk=task_id)
+        return render(request,'edit_profile.html',{'profile_up':profile_up} )

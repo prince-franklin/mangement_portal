@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+
+
+
+<div class ="container">
+    {% if messages %}
+            {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{message}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+            {%endfor%}
+    {%endif%}
+
+    <h1 class="text-danger"> UPDTAE PROFILE</h1>
+    <form method ="post" class ="row">
+        {% csrf_token %}
+        <div class="mb-3 col-lg-6">
+            <label class= "col-lg-4 ">NAME</label>
+            <input type="text" class="form-control "  name="name"  placeholder= "{{profile_up.name}}" value="{{profile_up.name}}">
+        </div>
+        <div class="mb-3 col-lg-6">
+            <label class= "col-lg-4">EMAIL ADDRESS</label>
+            <input type="email" class="form-control "  name="email"  placeholder= "{{profile_up.email}}" value="{{profile_up.email}}">
+        </div>
+        <div class="mb-3 col-lg-6">
+            <label class ="col-lg-4">COURSES</label>
+            <input type="courses" class="form-control "  name="courses"  placeholder= "{{profile_up.courses}}" value="{{profile_up.courses}}">
+         </div>
+        <div class="mb-3 col-lg-6">
+            <label class= "col-lg-4">PHONE NUMBER</label>
+            <input type="tel" class="form-control"  name="phone"  placeholder= "{{profile_up.phone}}" value="{{profile_up.phone}}">
+        </div>
+        <div class="col-lg-12">
+            <button type="submit" class="btn btn-primary">UPDTAE PROFILE</button>
+        </div>
+    
+    
+    </form>
+
+</div>
+{% endblock content %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+
+    <div class ="container">
+
+        <h1> UPDTAE COURSE</h1>
+        {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{messages}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {%endfor%}
+    {%endif%}
+
+
+        <form method ="POST" class ="row">
+            {% csrf_token %}
+            <div class="mb-3 col-lg-6">
+                <label class ="col-lg-4 ">TITLE</label>
+                <input type="text" class="form-control "  name="title"  placeholder= "{{course_c.title}}" value="{{course_up.title}}">
+            </div>
+            <div class="mb-3 col-lg-6">
+                <label class ="col-lg-4">COURSE CODE</label>
+                <input type="text" class="form-control "  name="code"  placeholder= "COURSE CODE" value="{{course_up.code}}">
+            </div>
+            <div class="mb-3 col-lg-6">
+                <label class= "col-lg-4">DESCRIPTION</label>
+                <input type="text" class="form-control "  name="description"  placeholder= " COURSE DESCRIPTION" value="{{course_up.description}}">
+            </div>
+            <div class="mb-3 col-lg-6">
+                <label class ="col-lg-4">DEPARTMENT</label>
+                <input type="text" class="form-control"  name="department"  placeholder= "DEPARTMENT" value="{{course_up.department}}">
+            </div>
+            <div class="mb-3 col-lg-6">
+                <label class ="col-lg-4">TEACHER</label>
+                <input type="text" class="form-control"  name="teacher"  placeholder= "TEACHER"  value="{{course_up.teacher}}">
+            </div>
+
+            <div class="col-lg-12">
+                <button type="submit" class="btn btn-primary">Update course</button>
+            </div>
+    <div>
+{% endblock content %}
