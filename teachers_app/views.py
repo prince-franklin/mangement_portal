@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from . models import student_profile
 from . models import courses_detail
-from .form import studentForm, courseForm
+from .form import studentForm, courseForm, departmentForm
 from django.contrib import messages
 
 # Create your views here.
@@ -80,3 +80,13 @@ def edit_profile(request, task_id):
     else:
         profile_up=student_profile.objects.get(pk=task_id)
         return render(request,'edit_profile.html',{'profile_up':profile_up} )
+    
+def add_department(request):
+    if request.method=="POST":
+        form=departmentForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+        messages.success(request,('Department Added successfully'))
+        return redirect('add_department')
+    else:
+        return render(request,'department.html')

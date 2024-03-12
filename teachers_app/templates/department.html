@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+
+    <div class ="container">
+
+        <h1 class="text-primary">ADD DEPARTMENT</h1>
+        {% if messages %}
+            {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        {{message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                
+            {%endfor%}
+        {%endif%}
+
+    <form method ="post" class ="row">
+        {% csrf_token %}
+        <div class="mb-3 col-lg-6">
+            <label class ="col-lg-4 ">DEPARTMENT</label>
+            <input type="text" class="form-control "  name="department"  placeholder= " ADD DEPARTMENT">
+        </div>
+        <div class="col-lg-12">
+            <button type="submit" class="btn btn-primary">Add department</button>
+        </div>
+    </form>
+{% endblock content %}

@@ -23,4 +23,10 @@ class courses_detail(models.Model):
     def __str__(self):
         return self.title
     
+class department_mod(models.Model):
+    department=models.CharField(max_length=256)
+    
+    def __str__(self):
+        return self.department
+    
     
